@@ -12,7 +12,7 @@ import com.haxepunk.utils.Key;
  */
 class Ship extends Entity
 {
-	public function new(x:Float, y:Float)
+    public function new(x:Float, y:Float)
     {
         super(x, y);
 
@@ -21,7 +21,7 @@ class Ship extends Entity
 
         Input.define("up", [Key.UP, Key.W]);
         Input.define("down", [Key.DOWN, Key.S]);
-		Input.define("shoot", [Key.SPACE]);
+        Input.define("shoot", [Key.SPACE]);
 
         velocity = 0;
         type = "player";
@@ -40,11 +40,11 @@ class Ship extends Entity
         {
             acceleration = 1;
         }
-		
-		if (Input.check("shoot"))
-		{
-			scene.add(new Bullet(x + width, y + height / 2));
-		}
+        
+        if (Input.check("shoot"))
+        {
+            scene.add(new Bullet(x + width, y + height / 2));
+        }
     }
 
     private function move()

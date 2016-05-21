@@ -9,15 +9,15 @@ import com.haxepunk.graphics.Image;
  */
 class Enemy extends Entity
 {
-	private static var _sharedGraphic:Image;
-	
-	public function new(x:Float, y:Float)
+    private static var _sharedGraphic:Image;
+    
+    public function new(x:Float, y:Float)
     {
         super(x, y);
-		
-		if (_sharedGraphic == null) {
-			_sharedGraphic = Image.createRect(32, 32);
-		}
+        
+        if (_sharedGraphic == null) {
+            _sharedGraphic = Image.createRect(32, 32);
+        }
         graphic = _sharedGraphic;
         setHitbox(32, 32);
         type = "enemy";
@@ -32,10 +32,10 @@ class Enemy extends Entity
 
     public override function update()
     {
-		if (x < -width) {
-			scene.remove(this);
-			return;
-		}
+        if (x < -width) {
+            scene.remove(this);
+            return;
+        }
         moveBy(-5, 0, "player");
         super.update();
     }

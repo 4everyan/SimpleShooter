@@ -5,7 +5,7 @@ import com.haxepunk.HXP;
 
 class MainScene extends Scene
 {
-	public function new()
+    public function new()
     {
         super();
     }
