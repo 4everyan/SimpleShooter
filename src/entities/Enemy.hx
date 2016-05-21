@@ -9,11 +9,16 @@ import com.haxepunk.graphics.Image;
  */
 class Enemy extends Entity
 {
+	private static var _sharedGraphic:Image;
+	
 	public function new(x:Float, y:Float)
     {
         super(x, y);
-
-        graphic = Image.createRect(32, 32);
+		
+		if (_sharedGraphic == null) {
+			_sharedGraphic = Image.createRect(32, 32);
+		}
+        graphic = _sharedGraphic;
         setHitbox(32, 32);
         type = "enemy";
     }
