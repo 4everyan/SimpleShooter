@@ -1,6 +1,7 @@
 package entities;
 
 import com.haxepunk.Entity;
+import com.haxepunk.HXP;
 import com.haxepunk.graphics.Image;
 
 /**
@@ -27,6 +28,10 @@ class Bullet extends Entity
 
     public override function update()
     {
+		if (x > HXP.width) {
+			scene.remove(this);
+			return;
+		}
         moveBy(20, 0, "enemy");
         super.update();
     }
